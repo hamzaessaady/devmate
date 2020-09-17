@@ -1,0 +1,17 @@
+.my-logs-btn {
+  position: relative;
+
+  .notification-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: small;
+    font-weight: 500;
+    color: white;
+    border-radius: 100%;
+    top: -10px;
+    right: -10px;
+  }
+  
+
+}
