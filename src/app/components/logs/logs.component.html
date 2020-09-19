@@ -1,10 +1,12 @@
 <section class="columns is-centered">
   <div class="column is-half">
     <div class="panel has-background-white">
-      <a class="panel-block">
-        <div class="columns is-vcentered" style="width: 100%;" >
-          <span class="column is-7 has-text-info">Create new component</span>
-          <span class="column is-4 has-text-grey-light">13/07/1997</span>
+      <a *ngFor="let log of logs" class="panel-block">
+        <div class="columns is-vcentered is-mobile" style="width: 100%;" >
+          <span class="column is-7 has-text-info">{{ log.title }}</span>
+          <span class="column is-4 has-text-grey-light has-text-centered">
+            {{ log.updatedAt | date}}
+          </span>
           <span class="column is-1 has-text-right px-0"><a class="tag is-delete"></a></span>
         </div>
       </a>
