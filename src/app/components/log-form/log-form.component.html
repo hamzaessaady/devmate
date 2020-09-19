@@ -19,9 +19,19 @@
           <div class="columns is-mobile">
             <div class="column">
               <button class="button is-danger has-text-weight-semibold"
-                [disabled]="!logForm.form.valid">
+                type="submit"
+                [disabled]="!logForm.form.valid"
+                [class.is-hidden]="isEditState">
                 <span class="icon"><i class="fas fa-plus"></i></span>
                 <span>Add</span>
+              </button>
+              <button class="button is-warning has-text-weight-semibold"
+                type="button"
+                [disabled]="!logForm.form.valid"
+                [class.is-hidden]="!isEditState"
+                (click)="updateLog()">
+                <span class="icon"><i class="fas fa-edit"></i></span>
+                <span>Edit</span>
               </button>
             </div>
             <div class="column has-text-right">

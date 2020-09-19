@@ -1,7 +1,7 @@
 <section class="columns is-centered">
   <div class="column is-half">
     <div class="panel has-background-white">
-      <a *ngFor="let log of logs" class="panel-block">
+      <a *ngFor="let log of logs" class="panel-block" (click)="editLog(log)">
         <div class="columns is-vcentered is-mobile" style="width: 100%;" >
           <span class="column is-7 has-text-info">{{ log.title }}</span>
           <span class="column is-4 has-text-grey-light has-text-centered">
