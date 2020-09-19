@@ -13,9 +13,9 @@ export class LogService {
 
   constructor() { 
     this.logs = [
-      {title: 'Create log component', updatedAt: new Date("2020-09-12")},
-      {title: 'Add Services', updatedAt: new Date("1/2/2020")},
-      {title: 'Set Routes', updatedAt: new Date("1/3/2020")}
+      {id:2, title: 'Set Routes', updatedAt: new Date("1/3/2020")},
+      {id:1, title: 'Add Services', updatedAt: new Date("1/2/2020")},
+      {id:0, title: 'Create log component', updatedAt: new Date("2020-09-12")},
     ];
   }
 
@@ -24,6 +24,7 @@ export class LogService {
   }
 
   addLog(log: Log): void {
+    log.id = this.logs[0].id + 1;
     this.logs.unshift(log);
   }
 }

@@ -19,6 +19,7 @@ export class LogFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.log = {
+      id: -1,
       title: '',
       updatedAt: null
     }
