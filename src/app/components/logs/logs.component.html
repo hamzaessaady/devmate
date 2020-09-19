@@ -7,9 +7,14 @@
           <span class="column is-4 has-text-grey-light has-text-centered">
             {{ log.updatedAt | date}}
           </span>
-          <span class="column is-1 has-text-right px-0"><a class="tag is-delete"></a></span>
+          <span class="column is-1 has-text-right px-0">
+            <a (click)="removeLog(log)" class="tag is-delete"></a>
+          </span>
         </div>
       </a>
+      <div *ngIf="logs.length == 0" class="panel-block columns has-text-centered mt-2">
+        <p class="column has-text-grey-light is-italic ">No logs</p> 
+      </div>
     </div>
   </div>
 </section>

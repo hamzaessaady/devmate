@@ -16,7 +16,10 @@ export class LogsComponent implements OnInit {
 
   ngOnInit(): void {
     this.logService.getLogs().subscribe(data => this.logs = data);
-    console.log(this.logs);
+  }
+
+  removeLog(log: Log): void {
+    this.logService.deleteLog(log);
   }
 
 }

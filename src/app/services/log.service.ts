@@ -24,7 +24,13 @@ export class LogService {
   }
 
   addLog(log: Log): void {
-    log.id = this.logs[0].id + 1;
+    log.id = this.logs.length == 0 ? 0 : this.logs[0].id + 1;
     this.logs.unshift(log);
+  }
+
+  deleteLog(logToDelete: Log): void {
+    this.logs.forEach((log, index) => {
+      if(logToDelete.id === log.id) this.logs.splice(index, 1);
+    });
   }
 }
