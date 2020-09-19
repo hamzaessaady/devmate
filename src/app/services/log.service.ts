@@ -22,4 +22,8 @@ export class LogService {
   getLogs(): Observable<Log[]> {
     return of(this.logs);
   }
+
+  addLog(log: Log): void {
+    this.logs.unshift(log);
+  }
 }
