@@ -7,24 +7,30 @@
         </div>
       </div>
       <div class="card-content">
-        <form>
+        <form #logForm=ngForm (ngSubmit)="onSubmit(logForm)">
           <div class="field">
             <div class="control">
-              <input class="input is-shadowless" type="text" placeholder="Log title">
+              <input 
+                class="input is-shadowless"
+                name="title" type="text" placeholder="Log title"
+                [(ngModel)]="log.title" required>
             </div>
           </div>
-          <div class="columns">
+          <div class="columns is-mobile">
             <div class="column">
-              <button class="button is-danger has-text-weight-semibold">
+              <button class="button is-danger has-text-weight-semibold"
+                [disabled]="!logForm.form.valid">
                 <span class="icon"><i class="fas fa-plus"></i></span>
                 <span>Add</span>
               </button>
             </div>
             <div class="column has-text-right">
-              <button class="button has-background-grey has-text-white has-text-weight-semibold">
+              <a class="button has-background-grey has-text-white has-text-weight-semibold"
+                [class.is-hidden]="!logForm.form.valid"
+                (click)="logForm.reset()">
                 <span class="icon"><i class="fas fa-eraser"></i></span>
                 <span>Clear</span> 
-              </button>
+              </a>
             </div>
           </div>
         </form>
