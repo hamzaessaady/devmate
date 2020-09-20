@@ -27,6 +27,7 @@ export class LogsComponent implements OnInit {
     this.isShowModal = false;
     this.isDeleteState = false;
     this.logService.getLogs().subscribe(data => this.logs = data);
+    this.sharedService.changelogsCount(this.logs.length);
     this.sharedService.currentLog$.subscribe(log => this.selectedLog = log);
   }
 
@@ -35,6 +36,7 @@ export class LogsComponent implements OnInit {
     this.logService.deleteLog(log);
     this.sharedService.changeNotification("The Log is deleted successefully !");
     this.sharedService.changeCurrentLog({id: null, title: null, updatedAt: null});
+    this.sharedService.changelogsCount(this.logs.length);
     this.closeDeleteModal();
   }
 

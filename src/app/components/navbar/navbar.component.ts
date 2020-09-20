@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SharedService } from 'src/app/services/shared.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  logsCount: number;
+
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
+    this.sharedService.logsCount$.subscribe(value => this.logsCount = value);
   }
 
 }

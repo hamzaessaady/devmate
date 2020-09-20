@@ -15,6 +15,7 @@ export class LogFormComponent implements OnInit {
   log: Log;
   previousLog: Log;
   isEditState: boolean;
+  logsCount: number;
   @ViewChild('logForm') form: any;
 
   // Constructor and ngOnInit
@@ -29,6 +30,7 @@ export class LogFormComponent implements OnInit {
       this.log = log;
       this.previousLog = JSON.parse(JSON.stringify(this.log));
     });
+    this.sharedService.logsCount$.subscribe(value => this.logsCount = value);
   }
 
   // On Submit : add new log
@@ -37,6 +39,7 @@ export class LogFormComponent implements OnInit {
       value.updatedAt = new Date();
       this.logService.addLog(value);
       this.form.reset();
+      this.sharedService.changelogsCount(this.logsCount + 1);
       this.sharedService.changeNotification("The new Log is added successefully !");
     }
   }
