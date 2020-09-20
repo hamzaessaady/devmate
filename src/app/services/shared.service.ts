@@ -12,7 +12,7 @@ export class SharedService {
   private editStateSource = new BehaviorSubject<boolean>(false);
   private currentLogSource = new BehaviorSubject<Log>({id: -1, title: '', updatedAt: null});
   private notificationSource = new Subject<string>();
-  private logsCountSource = new Subject<number>();
+  private logsCountSource = new BehaviorSubject<number>(0);
 
   // Observable streams
   editState$ = this.editStateSource.asObservable();
