@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject} from 'rxjs';
+import { BehaviorSubject, Subject} from 'rxjs';
 
 import { Log } from '../models/log';
 
@@ -11,10 +11,12 @@ export class SharedService {
   // Observable sources
   private editStateSource = new BehaviorSubject<boolean>(false);
   private currentLogSource = new BehaviorSubject<Log>({id: -1, title: '', updatedAt: null});
+  private notificationSource = new Subject<string>();
 
   // Observable streams
   editState$ = this.editStateSource.asObservable();
   currentLog$ = this.currentLogSource.asObservable();
+  notification$ = this.notificationSource.asObservable();
   
   // Service message commands
   changeEditState(value: boolean){
@@ -23,6 +25,10 @@ export class SharedService {
 
   changeCurrentLog(log: Log){
     this.currentLogSource.next(log);
+  }
+
+  changeNotification(message: string){
+    this.notificationSource.next(message);
   }
   
 }

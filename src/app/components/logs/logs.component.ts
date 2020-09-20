@@ -29,6 +29,7 @@ export class LogsComponent implements OnInit {
   // Remove log
   removeLog(log: Log): void {
     this.logService.deleteLog(log);
+    this.sharedService.changeNotification("The Log is deleted successefully !");
   }
 
   // Edit Log

@@ -33,6 +33,7 @@ export class LogFormComponent implements OnInit {
       value.updatedAt = new Date();
       this.logService.addLog(value);
       this.form.reset();
+      this.sharedService.changeNotification("The new Log is added successefully !");
     }
   }
 
@@ -41,6 +42,7 @@ export class LogFormComponent implements OnInit {
     this.logService.updateLog(this.log).subscribe((log) => {
       this.sharedService.changeEditState(false);
       this.sharedService.changeCurrentLog({id: -1, title: '', updatedAt: null});
+      this.sharedService.changeNotification("The Log is updated successefully!");
     });
   }
 

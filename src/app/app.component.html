@@ -8,4 +8,9 @@
       </div>
     </div>
   </article>
+
+  <div class="notification is-info " [hidden]="notification == null">
+    <button class="delete" (click)="hideNotification()"></button>
+    {{ notification }}
+  </div>
 </main>
