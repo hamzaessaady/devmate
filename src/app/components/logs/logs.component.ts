@@ -13,6 +13,7 @@ export class LogsComponent implements OnInit {
 
   // Attributes
   logs: Log[];
+  selectedLog: Log;
 
   // Constructor and ngOnInit
   constructor(
@@ -22,6 +23,7 @@ export class LogsComponent implements OnInit {
 
   ngOnInit(): void {
     this.logService.getLogs().subscribe(data => this.logs = data);
+    this.sharedService.currentLog$.subscribe(log => this.selectedLog = log);
   }
 
   // Remove log
