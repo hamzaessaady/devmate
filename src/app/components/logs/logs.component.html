@@ -9,7 +9,7 @@
             {{ log.updatedAt | date}}
           </span>
           <span class="column is-1 has-text-right px-0">
-            <a (click)="removeLog(log)" class="tag is-delete"></a>
+            <a (click)="showDeleteModal(log)" class="tag is-delete"></a>
           </span>
         </div>
       </a>
@@ -19,3 +19,21 @@
     </div>
   </div>
 </section>
+
+<!-- Modal : Confirm Delete operation -->
+<div class="modal" [class.is-active]="isShowModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" (click)="closeDeleteModal()" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <p>Are you sure you want to delete this log ?</p>
+    </section>
+    <footer class="modal-card-foot py-2">
+      <button class="button is-danger" (click)="removeLog(selectedLog)">Delete log</button>
+      <button class="button" (click)="closeDeleteModal()">Cancel</button>
+    </footer>
+  </div>
+</div>
