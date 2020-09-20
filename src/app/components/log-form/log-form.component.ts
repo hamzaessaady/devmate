@@ -13,6 +13,7 @@ export class LogFormComponent implements OnInit {
 
   // Attributes
   log: Log;
+  previousLog: Log;
   isEditState: boolean;
   @ViewChild('logForm') form: any;
 
@@ -24,7 +25,10 @@ export class LogFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedService.editState$.subscribe(value => this.isEditState = value);
-    this.sharedService.currentLog$.subscribe(log => this.log = log);
+    this.sharedService.currentLog$.subscribe(log => {
+      this.log = log;
+      this.previousLog = JSON.parse(JSON.stringify(this.log));
+    });
   }
 
   // On Submit : add new log
@@ -44,6 +48,13 @@ export class LogFormComponent implements OnInit {
       this.sharedService.changeCurrentLog({id: -1, title: '', updatedAt: null});
       this.sharedService.changeNotification("The Log is updated successefully!");
     });
+  }
+
+  // CancelEdit
+  cancelEdit(){
+    this.log.title = this.previousLog.title;
+    this.sharedService.changeEditState(false);
+    this.sharedService.changeCurrentLog({id: null, title: null, updatedAt: null});
   }
 
 }
