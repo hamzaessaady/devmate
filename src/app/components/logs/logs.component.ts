@@ -34,7 +34,7 @@ export class LogsComponent implements OnInit {
   // Remove log
   removeLog(log: Log): void {
     this.logService.deleteLog(log);
-    this.sharedService.changeNotification("The Log is deleted successefully !");
+    this.sharedService.changeNotification("The Log is deleted successfully!");
     this.sharedService.changeCurrentLog({id: null, title: null, updatedAt: null});
     this.sharedService.changelogsCount(this.logs.length);
     this.closeDeleteModal();

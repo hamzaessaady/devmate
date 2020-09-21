@@ -40,7 +40,7 @@ export class LogFormComponent implements OnInit {
       this.logService.addLog(value);
       this.form.reset();
       this.sharedService.changelogsCount(this.logsCount + 1);
-      this.sharedService.changeNotification("The new Log is added successefully !");
+      this.sharedService.changeNotification("The new Log is added successfully !");
     }
   }
 
@@ -49,7 +49,7 @@ export class LogFormComponent implements OnInit {
     this.logService.updateLog(this.log).subscribe((log) => {
       this.sharedService.changeEditState(false);
       this.sharedService.changeCurrentLog({id: -1, title: '', updatedAt: null});
-      this.sharedService.changeNotification("The Log is updated successefully!");
+      this.sharedService.changeNotification("The Log is updated successfully!");
     });
   }
 
