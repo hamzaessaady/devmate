@@ -1,27 +1,71 @@
-# Devmate
+# [Devmate][homepageURL]
+![Angular CLI version][angularBadge] <br/>
+By [Hamza Es-saady][linkedinURL]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+<!-- Logo -->
+<div align="center">
+<img src="./src/assets/images/dev-mate-logo.svg" alt="Devmate Logo" width="400px">
+</div> <br/>
 
-## Development server
+<!-- Description -->
+[Devmate][homepageURL] is an UI application to help you log your development features. You'll like Devmate because it is lightweight and uses a friendly and minimalist UI. Devmate is not better than other existing solutions, but it can help you make a quick overview of the workflow of your development projects. All your logs will be saved directly into the local storage of your browser.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You are free to reuse, copy, modify, and distribute, but you have to give attribution.
+
+## Technologies & Tools
+[Devmate][homepageURL] is created with:
+* [Angular 10][angularURL] : Frontend framework
+* [Node.js][nodeURL] : Runtime environment
+* [Angular CLI][angularCliURL] : Frontend scaffolding
+* [Bulma][BulmaURL] : Layout and styles
+* [Font Awesome][fontAwesomeURL] : icons
+
+## Prerequisites
+Before installing [Devmate][homepageURL] you need to:
+1. Install [Node.js][nodeURL]
+2. Install Angular CLI : `npm i -g @angular/cli`
+
+## Installation and configuration
+
+### Clone the repo
+```shell
+git clone https://github.com/Kuohamkun/devmate.git
+cd devmate
+```
+### Install npm packages
+Install the `npm` packages described in the `package.json` and verify that it works:
+
+```shell
+npm install
+npm start
+```
+
+The `npm start` command builds (compiles TypeScript and copies assets) the application into `dist/`, watches for changes to the source files, and runs `lite-server` on port `3000`.
+
+Shut it down manually with `Ctrl-C`.
+
+## Run
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will run and it will automatically reload if you change any of the source files.
 
 ## Code scaffolding
-
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ## Further help
+This project was generated with [Angular CLI][angularCliGH] version 10.0.4. <br/>
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README][angularCliREADME].
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+<!-- IDENTIFIERS ------------------------------------------------------------->
+[homepageURL]: https://kuohamkun.github.io/devmate/
+[linkedinURL]: https://www.linkedin.com/in/essaadyhamza/
+[angularURL]: https://angular.io 
+[nodeURL]: https://nodejs.org
+[angularCliURL]: https://cli.angular.io
+[angularCliGH]: https://github.com/angular/angular-cli
+[angularCliREADME]: https://github.com/angular/angular-cli/blob/master/README.md
+[BulmaURL]: https://bulma.io/
+[fontAwesomeURL]: http://fontawesome.com 
+[angularBadge]: https://img.shields.io/badge/Angular_CLI-10.0.4-DD0031?style=flat&logo=angular
