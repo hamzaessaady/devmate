@@ -1,5 +1,7 @@
 # [Devmate][homepageURL]
-![Angular CLI version][angularBadge] <br/>
+[![NPM][homepageBadge]][homepageURL] 
+![Angular CLI version][angularBadge] 
+![NPM][npmBadge] <br/>
 By [Hamza Es-saady][linkedinURL]
 
 <!-- Logo -->
@@ -57,6 +59,22 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 This project was generated with [Angular CLI][angularCliGH] version 10.0.4. <br/>
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README][angularCliREADME].
 
+## :sparkling_heart: Support me
+
+I just start to open-source almost everything I can, and I try to reply to everyone needing help using these projects.
+However, If you are using this project and happy with it and just want to **encourage** me to continue creating stuff, there are few ways you can do it :
+
+- **Giving proper credit when you use it, linking back to it :D**
+- **Starring and sharing the project :rocket:**
+
+Thanks! :heart:
+
+---
+
+Contributions are welcome! <3
+
+Made with :heart: and Passion.
+
 
 <!-- IDENTIFIERS ------------------------------------------------------------->
 [homepageURL]: https://kuohamkun.github.io/devmate/
@@ -68,4 +86,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [angularCliREADME]: https://github.com/angular/angular-cli/blob/master/README.md
 [BulmaURL]: https://bulma.io/
 [fontAwesomeURL]: http://fontawesome.com 
-[angularBadge]: https://img.shields.io/badge/Angular_CLI-10.0.4-DD0031?style=flat&logo=angular
+[angularBadge]: https://img.shields.io/badge/Angular_CLI-10.0.4-DD0031?style=flat-square&logo=angular
+[homepageBadge]: https://img.shields.io/badge/VISIT_HOME_PAGE-f14668?style=flat-square
+[npmBadge]: https://img.shields.io/npm/v/npm?color=CB3837&logo=NPM&style=flat-square
